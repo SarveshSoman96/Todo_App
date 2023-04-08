@@ -1,0 +1,12 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  background-color: #7678ed;
+  padding: 2rem 0;
+}

@@ -1,0 +1,130 @@
+.App{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1{
+  color: #3d348b;
+}
+
+.todoWrapper{
+  max-width: 600px;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #3d348b;
+  border: 1px solid #3d348b;
+  text-align: center;
+}
+
+.addToDo{
+  all: unset;
+  font-size: 20px;
+  font-weight: 800;
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: #7678ed;
+  color: #fff;
+  cursor: pointer;
+}
+
+.addToDo:hover{
+  color: #7678ed;
+  border: 2px solid #7678ed;
+  background-color: transparent;
+}
+
+.todo_input{
+  all: unset;
+  padding: 10px 20px;
+  background: transparent;
+  text-align: left;
+  caret-color: inherit;
+  color: #7678ed;
+}
+
+.ListContainer, .empty_todo, .todo_status_wrapper{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #7678ed;
+}
+
+.ListContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.empty_todo{
+  color: #fff;
+}
+
+.edit_todo{
+  all: unset ;
+  display: inline-block;
+  background: transparent;
+  border-bottom: 1px solid #3d348b;
+  text-align: left;
+  padding: 0 5px 2px;
+}
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #7678ed;
+  border: 1px solid #7678ed;
+  color: #fff;
+
+}
+
+.completed_task{
+  background-color: transparent;
+}
+
+.btn{
+  all: unset;
+  padding: 5px 10px;
+  border: 1px solid #3d348b;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn.dele{
+  margin-inline: 10px;
+}
+
+.todo_status_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
+.todo_status_wrapper .todo_status_info{
+  flex: 1;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+.todo_status_wrapper .todo_status_info .todo_count{
+    font-size: 1.3rem;
+    color: #7678ed;
+}
+
+.todo_status_wrapper button{
+  all: unset;
+  padding: 5px 10px;
+  border: 1px solid #3d348b;
+  border-radius: 5px;
+  background-color: #7678ed;
+  cursor: pointer;
+}
