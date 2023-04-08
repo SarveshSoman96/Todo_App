@@ -39,6 +39,7 @@ export const reducer = (state, action) => {
     console.log(complete_todo)
 
     return{
+      ...state,
       todoTasks: complete_todo
     }
 
@@ -54,12 +55,14 @@ export const reducer = (state, action) => {
       )
 
       return {
+        ...state,
         todoTasks: newUpdatedList
       }
 
     case "clear_todo":
 
     return {
+      ...state,
       todoTasks: []
     }
 
@@ -74,6 +77,7 @@ export const reducer = (state, action) => {
       })
 
       return {
+        ...state,
         todoTasks: completedAllTodoList
       }
 
