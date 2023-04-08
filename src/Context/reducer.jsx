@@ -70,7 +70,7 @@ export const reducer = (state, action) => {
 
       const completedAllTodoList = state.todoTasks.map((todo) => {
          if (!todo.isCompleted){
-            return todo.isCompleted = true
+              todo.isCompleted = true
           }
 
           return todo
