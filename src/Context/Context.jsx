@@ -50,9 +50,14 @@ const TodoContextProvider = ({children}) => {
         })
     };
 
+    const completeAllTodo = () => {
+        dispatch({
+            type: "complete_All"
+        })
+    };
 
 return (
-    <TodoContext.Provider value={{...state , addTodoHandler, deleteFromTodoHandler, completeTodoHandler, updateNameHandler, clearState}}>
+    <TodoContext.Provider value={{...state , addTodoHandler, deleteFromTodoHandler, completeTodoHandler, updateNameHandler, clearState, completeAllTodo}}>
         {children}
     </TodoContext.Provider>
 )

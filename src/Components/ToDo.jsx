@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react'
 import { TodoContext } from '../Context/Context'
+import { StyledButton } from '../Styles/Button.styles'
+import { TodoStyled } from '../Styles/TodoStyled.styles'
 
 const ToDo = ({todoTask}) => {
 
@@ -10,7 +12,7 @@ const ToDo = ({todoTask}) => {
 
 
   return (
-    <div className={`todo ${todoTask.isCompleted ? "completed_task" : ""}`}>
+    <TodoStyled completed={todoTask.isCompleted}>
       {!showInput ? (
         <div className="todoName">{todoTask.taskName}</div>
       ) : (
@@ -25,41 +27,38 @@ const ToDo = ({todoTask}) => {
         {!todoTask.isCompleted ? (
           <>
           {
-            !showInput ? <button
-            className="edit btn"
+            !showInput ? <StyledButton
             onClick={() => {
               setShowInput((prevState) => !prevState)
             }}
           >
             Edit
-          </button> : <button
-              className="edit btn"
+          </StyledButton> : <StyledButton
               onClick={() => {
                 updateNameHandler({taskId: todoTask.id, name: newName})
                 setShowInput((prevState) => !prevState)
               }}
             >
               Update
-            </button>
+            </StyledButton>
           }
-            <button
-              className="dele btn"
+            <StyledButton
+              style={{marginInline: "10px"}}
               onClick={() => deleteFromTodoHandler(todoTask.id)}
             >
               dele
-            </button>
-            <button
-              className="comp btn"
+            </StyledButton>
+            <StyledButton
               onClick={() => completeTodoHandler(todoTask.id)}
             >
               comp
-            </button>
+            </StyledButton>
           </>
         ) : (
           <p>Completed Task</p>
         )}
       </div>
-    </div>
+    </TodoStyled>
   );
 }
 

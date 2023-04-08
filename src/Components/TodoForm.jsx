@@ -1,6 +1,9 @@
 import { useState, useContext } from 'react'
 // import { TodoGlobalContext } from '../Context/Context';
 import { TodoContext } from '../Context/Context';
+import { FlexRow } from '../Styles/FLex.styles';
+import { TodoInputStyled } from '../Styles/TodoWrapper.styles';
+import { FormButtonStyled } from '../Styles/Button.styles';
 
 const  TodoForm = () => {
 
@@ -22,10 +25,10 @@ const  TodoForm = () => {
 
   return (
     <form onSubmit={todoSubmitHandler}>
-        <div style={{display: "flex",alignItems: "center", justifyContent: "space-between", gap: "15px"}}>
-            <input className='todo_input' type="text" value={todoName} placeholder='Add your Todo' onChange={(e) => setTodoName(e.target.value)}/>
-            <button className='addToDo'>+</button>
-        </div>
+        <FlexRow>
+            <TodoInputStyled type="text" value={todoName} placeholder='Add your Todo' onChange={(e) => setTodoName(e.target.value)}/>
+            <FormButtonStyled>+</FormButtonStyled>
+        </FlexRow>
     </form>
   )
 }

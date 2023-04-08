@@ -1,22 +1,24 @@
 import { useContext } from 'react'
 import { TodoContext } from '../Context/Context'
+import { FooterStyled, TodoStatusInfo } from '../Styles/TodoFooter.styles'
+import { StyledButton } from '../Styles/Button.styles'
 
 const TodoFooter = () => {
 
- const { clearState, todoTasks } = useContext(TodoContext)
+ const { clearState, todoTasks, completeAllTodo } = useContext(TodoContext)
 
   const completed = todoTasks.filter(todo => todo.isCompleted === true)
 
   return (
-    <div className='todo_status_wrapper'>
+    <FooterStyled>
 
-      <button type='button' onClick={() => clearState()}>Clear All</button>
+      <StyledButton bg="#7678ed" onClick={() => clearState()}>Clear All</StyledButton>
 
-          <p className="todo_status_info">You have <span className='todo_count'> {todoTasks.length}</span> todos. Completed: <span className='todo_count'>{completed.length}</span></p>
+          <TodoStatusInfo>You have <span className='todo_count'> {todoTasks.length}</span> todos. Completed: <span className='todo_count'>{completed.length}</span></TodoStatusInfo>
       
-      <button type='button'>Complete All</button>
+      <StyledButton bg="#7678ed" onClick={() => completeAllTodo()}>Complete All</StyledButton>
 
-    </div>
+    </FooterStyled>
   )
 }
 

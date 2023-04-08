@@ -1,16 +1,14 @@
 import React from 'react'
 import ToDo from './ToDo'
-import { TodoGlobalContext } from '../Context/Context' 
+import { TodoGlobalContext } from '../Context/Context'
+import { TodoListContainerStyled } from '../Styles/TodoWrapper.styles' 
 
 const ListContainer = () => {
 
   const {todoTasks} = TodoGlobalContext();
 
-  // console.log(todoTasks)
-
-
   return (
-    <div className='ListContainer'>
+    <TodoListContainerStyled>
       {
         todoTasks.map( (todo) => (
 
@@ -18,7 +16,7 @@ const ListContainer = () => {
         ) )
       }
   
-    </div>
+    </TodoListContainerStyled>
   )
 }
 

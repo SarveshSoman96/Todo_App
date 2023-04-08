@@ -63,6 +63,20 @@ export const reducer = (state, action) => {
       todoTasks: []
     }
 
+    case "complete_All":
+
+      const completedAllTodoList = state.todoTasks.map((todo) => {
+         if (!todo.isCompleted){
+            return todo.isCompleted = true
+          }
+
+          return todo
+      })
+
+      return {
+        todoTasks: completedAllTodoList
+      }
+
     default:
       return state;
   }

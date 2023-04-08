@@ -3,13 +3,14 @@ import ListContainer from './ListContainer';
 import TodoForm from './TodoForm';
 import { TodoContext } from '../Context/Context';
 import TodoFooter from './todoFooter';
+import { TodoWrapperStyled, EmptyTodoWrapper } from '../Styles/TodoWrapper.styles';
 
 const TdoListWrapper = () => {
 
   const { todoTasks } = useContext(TodoContext);
 
   return (
-    <div className="todoWrapper">
+    <TodoWrapperStyled>
       <TodoForm />
       {todoTasks.length !== 0 ? (
         <>
@@ -17,9 +18,9 @@ const TdoListWrapper = () => {
           <TodoFooter />
         </>
       ) : (
-        <div className="empty_todo">Lets make a todo list!</div>
+        <EmptyTodoWrapper>Lets make a todo list!</EmptyTodoWrapper>
       )}
-    </div>
+    </TodoWrapperStyled>
   );
 }
 
