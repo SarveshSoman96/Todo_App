@@ -8,6 +8,10 @@ export const StyledButton = styled.button`
     background-color: ${props => props.bg};
     cursor: pointer;
 
+    @media screen and (min-width: 320px) and (max-width: ${({theme}) => theme.media.mobile}){
+        font-size: 0.9rem;
+    }
+
 `
 
 export const FormButtonStyled = styled.button`

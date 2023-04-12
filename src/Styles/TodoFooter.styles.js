@@ -9,6 +9,10 @@ export const FooterStyled = styled.div`
     margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid ${ ({theme}) => theme.colors.primary};
+
+  @media screen and (min-width: 320px) and (max-width: ${({theme}) => theme.media.mobile}){
+    gap: 1.1rem;
+    }
 `
 
 export const TodoStatusInfo = styled.div`
@@ -22,5 +26,7 @@ export const TodoStatusInfo = styled.div`
         color: ${ ({theme}) => theme.colors.primary};
     }
 
-
+    @media screen and (min-width: 320px) and (max-width: ${({theme}) => theme.media.mobile}){
+        font-size: 0.8rem;
+    }
 `

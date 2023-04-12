@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { reducer } from "./reducer";
 
 const initialState = {
@@ -14,7 +14,13 @@ const TodoContext = createContext();
 
 const TodoContextProvider = ({children}) => {
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const newState = JSON.parse(localStorage.getItem("tasks")) || initialState
+
+    const [state, dispatch] = useReducer(reducer, newState)
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(state))
+    }, [state])
 
 
     const addTodoHandler = (todoObject) => {

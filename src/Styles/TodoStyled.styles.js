@@ -19,4 +19,13 @@ export const TodoStyled = styled.div`
         padding: 0 5px 2px;
       }
 
+      @media screen and (min-width: 320px) and (max-width: ${({theme}) => theme.media.mobile}){
+        flex-direction: column;
+        gap: 1rem;
+
+        .todoName{
+          font-size: 1.1rem;
+        }
+      }
+
 `
