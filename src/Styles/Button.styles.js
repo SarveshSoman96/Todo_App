@@ -14,6 +14,12 @@ export const StyledButton = styled.button`
 
 `
 
+export const TodoButtons = styled.button`
+    all: unset;
+    color: ${ ({theme}) => theme.colors.secondary};
+    font-size: 1.1rem;
+`
+
 export const FormButtonStyled = styled.button`
     all: unset;
     font-size: 20px;

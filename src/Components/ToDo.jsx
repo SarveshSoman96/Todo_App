@@ -1,7 +1,9 @@
 import { useContext, useState } from 'react'
 import { TodoContext } from '../Context/Context'
-import { StyledButton } from '../Styles/Button.styles'
+import { TodoButtons } from '../Styles/Button.styles'
 import { TodoStyled } from '../Styles/TodoStyled.styles'
+import { AiFillEdit , AiFillLike, AiFillRest, AiFillTool} from "react-icons/ai";
+import { FcApproval } from "react-icons/fc";
 
 const ToDo = ({todoTask}) => {
 
@@ -27,35 +29,35 @@ const ToDo = ({todoTask}) => {
         {!todoTask.isCompleted ? (
           <>
           {
-            !showInput ? <StyledButton
+            !showInput ? <TodoButtons
             onClick={() => {
               setShowInput((prevState) => !prevState)
             }}
           >
-            Edit
-          </StyledButton> : <StyledButton
+            <AiFillEdit />
+          </TodoButtons> : <TodoButtons
               onClick={() => {
                 updateNameHandler({taskId: todoTask.id, name: newName})
                 setShowInput((prevState) => !prevState)
               }}
             >
-              Update
-            </StyledButton>
+              <AiFillTool />
+            </TodoButtons>
           }
-            <StyledButton
-              style={{marginInline: "10px"}}
+            <TodoButtons
+              style={{marginInline: "20px"}}
               onClick={() => deleteFromTodoHandler(todoTask.id)}
             >
-              dele
-            </StyledButton>
-            <StyledButton
+              <AiFillRest />
+            </TodoButtons>
+            <TodoButtons
               onClick={() => completeTodoHandler(todoTask.id)}
             >
-              comp
-            </StyledButton>
+              <AiFillLike />
+            </TodoButtons>
           </>
         ) : (
-          <p>Completed Task</p>
+          <p>Completed Task <FcApproval /> </p>
         )}
       </div>
     </TodoStyled>
