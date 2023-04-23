@@ -20,3 +20,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   `
+
+export const Container = styled.div`
+      padding-inline: 20px;
+  `
+  

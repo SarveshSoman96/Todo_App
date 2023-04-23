@@ -2,7 +2,7 @@ import TodoHeading from './Components/TodoHeading'
 import TodoListWrapper from "./Components/TodoListWrapper"
 import { ThemeProvider} from 'styled-components'
 import { FlexColumn } from './Styles/FLex.styles'
-import { GlobalStyles } from './Styles/Global.styles'
+import { GlobalStyles, Container } from './Styles/Global.styles'
 
 function App() {
 
@@ -28,8 +28,8 @@ function App() {
     <ThemeProvider theme={globalTheme}>
       <FlexColumn>
         <GlobalStyles />
-        <TodoHeading />
-        <TodoListWrapper />
+          <TodoHeading />
+          <TodoListWrapper />
     </FlexColumn>
 
     </ThemeProvider>

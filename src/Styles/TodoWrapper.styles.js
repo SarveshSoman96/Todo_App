@@ -41,5 +41,6 @@ export const TodoInputStyled = styled.input`
     caret-color: inherit;
     color: ${ ({theme}) => theme.colors.primary};
     font-weight: 600;
+
   
 `
