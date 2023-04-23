@@ -11,7 +11,7 @@ export const TodoWrapperStyled = styled.div`
 
     
   @media screen and (min-width: 320px) and (max-width: ${({theme}) => theme.media.mobile}){
-    width: 80%;
+    width: 90%;
     border-radius: 10px;
   }
 `
